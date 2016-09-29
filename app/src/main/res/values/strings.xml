@@ -1,6 +1,27 @@
 <resources>
+    
     <string name="app_name">A2O</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
+    
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="circle">Material Circle</string>
+
+    <string name="image">Image</string>
+    
+    <string name="introoneheader">From A To O</string>
+
+    <string name="introonemain">Yep. Be It Any Blood Group You Want There. We Have It All. So You Can Totally Rely On Us.</string>
+
+    <string name="introtwoheader">Certified Doctors</string>
+
+    <string name="introtwomain">Checked. Tested. Verified. So That You Get The Best Outta Us.</string>
+
+    <string name="introthreeheader">100% Fresh</string>
+
+    <string name="introthreemain">We Keep Your Blood Fresh And Safe. In Accordance With The International Blood Standards. </string>
+
+    <string name="introfourheader">Wherever. Whenever.</string>
+
+    <string name="introfourmain">Mishap May Strike Anytime. Do Not Worry. We Work Round The Clock. More Power To You!</string>
+    
 </resources>

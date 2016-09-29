@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/introfour">
+
+
+    <ImageView
+        android:id="@+id/circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/circle"
+        android:background="@drawable/circle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100sp" />
+
+
+    <ImageView
+        android:id="@+id/doctor"
+        android:layout_width="200sp"
+        android:layout_height="200sp"
+        android:contentDescription="@string/image"
+        android:background="@drawable/hours"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="125sp"/>
+
+
+    <LinearLayout
+        android:layout_below="@+id/circle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/headertext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/introfourheader"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:layout_marginTop="50sp"/>
+
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="@string/introfourmain"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="20sp"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
