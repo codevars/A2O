@@ -33,7 +33,8 @@
             android:layout_marginStart="20sp"
             android:layout_marginEnd="20sp"
             android:hint="@string/fullname"
-            android:background="@drawable/round"/>
+            android:background="@drawable/round"
+            android:inputType="text"/>
 
         <EditText
             android:id="@+id/email"
@@ -88,8 +89,9 @@
                 android:layout_marginStart="20sp"
                 android:layout_marginEnd="20sp"
                 android:background="@drawable/round"
-                android:entries="@array/bloodgroups"
+                android:entries="@array/convention"
                 android:layout_weight="1"
+
                 />
 
 
@@ -117,10 +119,9 @@
             android:layout_width="match_parent"
             android:layout_height="50sp"
             android:background="?attr/selectableItemBackground"
-            android:text="@string/login"
+            android:text="@string/register"
             android:textSize="20sp"
-            android:textColor="@color/white"
-            />
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 
