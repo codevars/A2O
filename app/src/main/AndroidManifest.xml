@@ -9,15 +9,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Intro"
-            android:theme="@style/AppThemeNoBar">
+            android:name=".Extras.Splash"
+            android:theme="@style/SplashTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginRegisterTabbed" android:theme="@style/AppThemeNoBar" />
+        <activity android:name=".Intro" android:theme="@style/AppThemeNoBar" android:screenOrientation="portrait" />
+        <activity android:name=".LoginRegisterTabbed" android:theme="@style/AppThemeNoBar" android:screenOrientation="portrait" />
     </application>
 
 </manifest>

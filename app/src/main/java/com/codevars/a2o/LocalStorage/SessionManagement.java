@@ -20,12 +20,14 @@ public class SessionManagement {
 
     private static final String PREF_NAME = "A2O Pref";
 
+    public static final String FIRST_TIME = "Yes";
+
     public static final String LOGIN = "No";
 
 
-    public void SessionManagement(Context context) {
+    public SessionManagement(Context context) {
 
-        context = this.context;
+        this.context = context;
 
         pref = context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
 
@@ -34,21 +36,38 @@ public class SessionManagement {
     }
 
 
-    public boolean SplashDone() { return pref.getBoolean(LOGIN, false); }
+
+    public boolean FirstTime() { return pref.getBoolean(FIRST_TIME, true); }
+
+    public boolean IntroDone() { return pref.getBoolean(LOGIN, false); }
+
+
+
+    public void unsetFirstTime(boolean state) {
+
+        editor.putBoolean(FIRST_TIME, state);
+
+        editor.commit();
+
+    }
 
 
     public void createsplashsession() {
 
         editor.putBoolean(LOGIN, true);
 
+        editor.commit();
+
     }
 
 
     public void logincheck() {
 
-        if (SplashDone()) {
+        if (this.IntroDone()) {
 
             Intent go = new Intent(context, Login.class);
+
+            context.startActivity(go);
 
         }
 

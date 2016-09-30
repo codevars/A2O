@@ -27,7 +27,7 @@ public class Intro extends AppIntro {
         addSlide(SampleSlide.newInstance(R.layout.intro_three));
         addSlide(SampleSlide.newInstance(R.layout.intro_four));
 
-        session = new SessionManagement();
+        session = new SessionManagement(getApplicationContext());
 
         hideStatusBar();
 
