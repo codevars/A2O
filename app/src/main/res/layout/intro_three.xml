@@ -13,7 +13,7 @@
         android:contentDescription="@string/circle"
         android:background="@drawable/circle"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100sp" />
+        android:layout_marginTop="70sp" />
 
 
     <ImageView
@@ -22,15 +22,17 @@
         android:layout_height="200sp"
         android:contentDescription="@string/image"
         android:background="@drawable/tube"
+        android:layout_above="@+id/linearLayout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="125sp"/>
+        android:layout_marginBottom="24dp" />
 
 
     <LinearLayout
         android:layout_below="@+id/circle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
 
 
         <TextView
@@ -56,5 +58,6 @@
 
 
     </LinearLayout>
+
 
 </RelativeLayout>
