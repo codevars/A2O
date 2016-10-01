@@ -30,7 +30,11 @@
             android:name=".LoginRegisterTabbed"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoBar" />
-        <activity android:name=".Phone"></activity>
+        <activity
+            android:name=".Phone"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:label="@string/app_name"/>
     </application>
 
 </manifest>
