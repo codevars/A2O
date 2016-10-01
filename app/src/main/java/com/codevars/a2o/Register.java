@@ -24,7 +24,7 @@ import java.util.prefs.PreferenceChangeEvent;
 public class Register extends Fragment implements View.OnClickListener {
 
 
-    private static final String REGISTER_URL = "http://a2o.esy.es/login.php";
+    private static final String REGISTER_URL = "http://a2o.esy.es/register.php";
 
     private EditText fullname;
 
