@@ -34,7 +34,8 @@
             android:layout_marginEnd="20sp"
             android:hint="@string/mobile"
             android:background="@drawable/round"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:maxLength="10"/>
 
         <EditText
             android:id="@+id/password"
@@ -46,7 +47,8 @@
             android:layout_marginEnd="20sp"
             android:hint="@string/password"
             android:background="@drawable/round"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:maxLength="16"/>
 
     </LinearLayout>
 
@@ -57,8 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@drawable/buttonmaterial"
-        android:layout_margin="20sp"
-        >
+        android:layout_margin="20sp">
 
         <Button
             android:id="@+id/loginbutton"
