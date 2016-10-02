@@ -1,10 +1,14 @@
+
 package com.codevars.a2o.LocalStorage;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-import com.codevars.a2o.Login;
+import com.codevars.a2o.VerifyOTP;
+import com.codevars.a2o.Phone;
+
+import java.util.HashMap;
 
 public class SessionManagement {
 
@@ -20,9 +24,18 @@ public class SessionManagement {
 
     private static final String PREF_NAME = "A2O Pref";
 
-    public static final String FIRST_TIME = "Yes";
+    public static final String INTRO = "No";
 
-    public static final String LOGIN = "No";
+    public static final String LOGIN = "Nah";
+
+    public static final String NUMBER = "Nao";
+
+    public static final String EMAIL = "EMAIL";
+
+    public static final String MOBILE = "MOBILE";
+
+    public static final String OTP = "OTP";
+
 
 
     public SessionManagement(Context context) {
@@ -37,22 +50,19 @@ public class SessionManagement {
 
 
 
-    public boolean FirstTime() { return pref.getBoolean(FIRST_TIME, true); }
+    public void createSplashSession() {
 
-    public boolean IntroDone() { return pref.getBoolean(LOGIN, false); }
-
-
-
-    public void unsetFirstTime(boolean state) {
-
-        editor.putBoolean(FIRST_TIME, state);
+        editor.putBoolean(INTRO, true);
 
         editor.commit();
 
     }
 
 
-    public void createsplashsession() {
+
+    public void createLoginSession(String email) {
+
+        editor.putString(EMAIL, email);
 
         editor.putBoolean(LOGIN, true);
 
@@ -61,17 +71,82 @@ public class SessionManagement {
     }
 
 
-    public void logincheck() {
 
-        if (this.IntroDone()) {
+    public void createNumberSession(String mobile, String otp) {
 
-            Intent go = new Intent(context, Login.class);
+        editor.putString(MOBILE, mobile);
 
-            context.startActivity(go);
+        editor.putString(OTP, otp);
+
+        editor.putBoolean(LOGIN, false);
+
+        editor.putBoolean(NUMBER, true);
+
+        editor.commit();
+
+    }
+
+
+
+    public void login() {
+
+        if (this.loginDone()) {
+
+            Intent i = new Intent(context, Phone.class);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            context.startActivity(i);
 
         }
 
     }
 
 
+
+    public void phone() {
+
+        if (this.phoneDone()) {
+
+            Intent i = new Intent(context, VerifyOTP.class);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            context.startActivity(i);
+
+        }
+
+    }
+
+
+
+    public HashMap<String,String> getEmail() {
+
+        HashMap<String, String> email = new HashMap<>();
+
+        email.put(EMAIL, pref.getString(EMAIL, null));
+
+        return email;
+
+    }
+
+
+
+    public boolean introDone() { return pref.getBoolean(INTRO, false); }
+
+    public boolean loginDone() { return pref.getBoolean(LOGIN, false); }
+
+    public boolean phoneDone() { return pref.getBoolean(NUMBER, false); }
+
+
+
 }
+

@@ -25,26 +25,23 @@ public class Splash extends AppCompatActivity {
 
     private void firstTimeCheck() {
 
-        if (session.FirstTime()) {
+        if (session.introDone()) {
 
-            Intent go = new Intent(Splash.this, Intro.class);
+            Intent go = new Intent(this, LoginRegisterTabbed.class);
 
             finish();
 
             startActivity(go);
-
-            session.unsetFirstTime(false);
 
         }
 
         else {
 
-            Intent go = new Intent(Splash.this, LoginRegisterTabbed.class);
+            Intent go = new Intent(this, Intro.class);
 
             finish();
 
             startActivity(go);
-
 
         }
 

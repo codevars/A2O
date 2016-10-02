@@ -13,16 +13,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@drawable/dialog"
-        android:layout_above="@+id/buttonpanel"
-        >
+        android:layout_above="@+id/buttonpanel" >
 
         <ImageView
             android:contentDescription="@string/image"
             android:layout_width="100sp"
             android:layout_height="100sp"
             android:src="@drawable/user"
-            android:layout_gravity="center"
-            />
+            android:layout_gravity="center" />
 
         <EditText
             android:id="@+id/fullname"
@@ -46,8 +44,7 @@
             android:layout_marginEnd="20sp"
             android:hint="@string/email"
             android:background="@drawable/round"
-            android:inputType="textEmailAddress"
-            />
+            android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/password"
@@ -79,8 +76,7 @@
                 android:layout_marginEnd="20sp"
                 android:background="@drawable/round"
                 android:entries="@array/bloodgroups"
-                android:layout_weight="1"
-                />
+                android:layout_weight="1" />
 
             <Spinner
                 android:id="@+id/convention"
@@ -92,20 +88,13 @@
                 android:layout_marginEnd="20sp"
                 android:background="@drawable/round"
                 android:entries="@array/convention"
-                android:layout_weight="1"
-
-                />
+                android:layout_weight="1" />
 
 
         </LinearLayout>
 
 
     </LinearLayout>
-
-
-
-
-
 
 
     <LinearLayout

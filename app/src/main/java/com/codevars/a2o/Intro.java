@@ -53,14 +53,13 @@ public class Intro extends AppIntro {
     @Override
     public void onSkipPressed() {
 
-        Intent skip = new Intent(this, LoginRegisterTabbed.class);
+        session.createSplashSession();
 
-        session.createsplashsession();
+        Intent skip = new Intent(this, LoginRegisterTabbed.class);
 
         finish();
 
         startActivity(skip);
-
 
     }
 
@@ -72,9 +71,9 @@ public class Intro extends AppIntro {
     @Override
     public void onDonePressed() {
 
-        Intent done = new Intent(this, LoginRegisterTabbed.class);
+        session.createSplashSession();
 
-        session.createsplashsession();
+        Intent done = new Intent(this, LoginRegisterTabbed.class);
 
         finish();
 

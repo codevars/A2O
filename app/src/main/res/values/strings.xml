@@ -2,13 +2,9 @@
 
     <string name="app_name">A2O</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <string name="circle">Material Circle</string>
 
     <string name="image">Image</string>
-
-    <string name="login">LOGIN</string>
 
     <string name="fullname">Full Name</string>
 
@@ -20,7 +16,13 @@
 
     <string name="mobile">Mobile Number</string>
 
+    <string name="login">LOGIN</string>
+
     <string name="register">REGISTER</string>
+
+    <string name="submit">SUBMIT</string>
+
+    <string name="prefix">+91</string>
 
     <string name="introoneheader">From A To O</string>
 
@@ -37,6 +39,8 @@
     <string name="introfourheader">Wherever. Whenever.</string>
 
     <string name="introfourmain">Mishap May Strike Anytime. Do Not Worry. We Work Round The Clock. More Power To You!</string>
+
+    <string name="verifywarning">Please Enter Your Phone Number. We Will Send A SMS For OTP Verification. Carrier Charges May Apply.</string>
 
     <string-array name="bloodgroups">
 

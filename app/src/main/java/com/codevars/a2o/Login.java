@@ -2,6 +2,7 @@ package com.codevars.a2o;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
@@ -10,9 +11,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.codevars.a2o.LocalStorage.SessionManagement;
 import com.codevars.a2o.Server.RegisterUserClass;
 import java.util.HashMap;
 
@@ -26,6 +31,10 @@ public class Login extends Fragment implements View.OnClickListener {
     private EditText password;
 
     private Button loginbutton;
+
+    private SessionManagement session;
+
+    private Animation slideup;
 
 
     public Login() {
@@ -49,6 +58,19 @@ public class Login extends Fragment implements View.OnClickListener {
         View view =  inflater.inflate(R.layout.fragment_login, container, false);
 
 
+        // Session Management
+
+        session = new SessionManagement(getContext());
+
+        session.login();
+
+        session.phone();
+
+        // Declaring Button Animation
+
+
+
+
         // Declaring Datatypes And Variables
 
         mobile = (EditText) view.findViewById(R.id.mobile);
@@ -70,6 +92,9 @@ public class Login extends Fragment implements View.OnClickListener {
         // Setting OnClickListeners
 
         loginbutton.setOnClickListener(this);
+
+
+        slideup();
 
 
         return view;
@@ -110,7 +135,7 @@ public class Login extends Fragment implements View.OnClickListener {
 
         if (mobile.getText().toString().trim().matches("")) {
 
-            Toast.makeText(getContext(), "Please Enter Your Mobile Number!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Please Enter Your Email Address!", Toast.LENGTH_SHORT).show();
 
             return;
 
@@ -134,19 +159,31 @@ public class Login extends Fragment implements View.OnClickListener {
 
 
 
-    private void initiate() {
+    private void slideup() {
 
-        String mob = mobile.getText().toString().trim();
+        slideup = new TranslateAnimation(0,0,500,0);
 
-        String pass = password.getText().toString().trim();
+        slideup.setDuration(1000);
 
-        login(mob, pass);
+        loginbutton.setAnimation(slideup);
 
     }
 
 
 
-    private void login(final String mob, final String pass){
+    private void initiate() {
+
+        String email = mobile.getText().toString().trim();
+
+        String pass = password.getText().toString().trim();
+
+        login(email, pass);
+
+    }
+
+
+
+    private void login(final String email, final String pass){
 
         class UserLoginClass extends AsyncTask<String, Void, String> {
 
@@ -171,6 +208,16 @@ public class Login extends Fragment implements View.OnClickListener {
                 if (s.equalsIgnoreCase("Successfully Logged In!")) {
 
                     Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
+
+                    session.createLoginSession(email);
+
+                    Intent go = new Intent(getContext(), Phone.class);
+
+                    getActivity().finish();
+
+                    startActivity(go);
+
+                    return;
 
                 }
 
@@ -209,7 +256,7 @@ public class Login extends Fragment implements View.OnClickListener {
 
         UserLoginClass attempt = new UserLoginClass();
 
-        attempt.execute(mob, pass);
+        attempt.execute(email, pass);
 
     }
 
@@ -225,7 +272,6 @@ public class Login extends Fragment implements View.OnClickListener {
         }
 
     }
-
 
 
 

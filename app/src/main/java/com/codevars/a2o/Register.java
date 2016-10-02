@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TabHost;
 import android.widget.Toast;
 
 import com.codevars.a2o.Server.RegisterUserClass;
@@ -171,6 +173,24 @@ public class Register extends Fragment implements View.OnClickListener {
 
         }
 
+
+
+    }
+
+
+
+    private void clear() {
+
+        fullname.getText().clear();
+
+        email.getText().clear();
+
+        password.getText().clear();
+
+        bloodgroup.setSelection(0);
+
+        convention.setSelection(0);
+
     }
 
 
@@ -218,6 +238,14 @@ public class Register extends Fragment implements View.OnClickListener {
                 loading.dismiss();
 
                 if (s.equalsIgnoreCase("Successfully Registered!")) {
+
+                    clear();
+
+                    TabLayout host = (TabLayout) getActivity().findViewById(R.id.tablayout);
+
+                    TabLayout.Tab tab = host.getTabAt(0);
+
+                    tab.select();
 
                     return;
 

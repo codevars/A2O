@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/dialog"
+        android:background="@drawable/dialogcurved"
         android:gravity="center"
         android:layout_above="@+id/buttonpanel"
         >
@@ -32,9 +32,9 @@
             android:layout_marginTop="50sp"
             android:layout_marginStart="20sp"
             android:layout_marginEnd="20sp"
-            android:hint="@string/mobile"
+            android:hint="@string/email"
             android:background="@drawable/round"
-            android:inputType="number"
+            android:inputType="text"
             android:maxLength="10"/>
 
         <EditText
